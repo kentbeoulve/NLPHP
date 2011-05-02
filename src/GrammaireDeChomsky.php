@@ -11,21 +11,11 @@ class GrammaireDeChomsky {
         $this->regles = $regles;
     }
 
-    /**
-     * Permet de rajouter une règle sous la forme d'une chaine de caractères
-     * Exemple : "R -> AB XY"
-     *
-     * @param r
-     * @throws Exception
-     */
     public function ajoute( Regle $r )
     {
         $this->regles[] = $r;
     }
 
-    /**
-     * Soit "R-> AB XY" retourne tous les R tel que $d = "AB" ou $d ="XY"
-     */
     public function antecedentsDe( $d1, $d2 = null )
     {
         $resultat = array();
