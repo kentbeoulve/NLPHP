@@ -1,7 +1,4 @@
 <?php
-
-include_once('grammaireDeChomsky.php');
-
 class MatriceDeCoke
 {
     protected $matrice;

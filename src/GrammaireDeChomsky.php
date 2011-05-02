@@ -1,7 +1,4 @@
 <?php
-
-include_once('Role.php');
-
 class GrammaireDeChomsky {
 
     protected $regles;
