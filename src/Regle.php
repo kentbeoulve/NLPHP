@@ -4,12 +4,6 @@ class Regle
     public $gauche;
     public $droite = array();
 
-   /**
-    * public Regle(String g, String d) { gauche=g;
-    *
-    * droite= new Vector<String>(); if(d.length()>0)
-    * droite.add(String.valueOf(d.charAt(0))); if
-    */
     public function __construct( $gauche, $droite1, $droite2 = null )
     {
         $this->gauche = $gauche;
