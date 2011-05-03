@@ -21,9 +21,9 @@ class MatriceDeCoke
         }
 
         //! Initialisation de la première ligne
-        for ( $i = 0; $i < $length; $i++)
+        for ( $j = 0; $j < $length; $j++)
         {
-            $this->matrice[0][$i] = $g->antecedentsDe( $etiquettes[$i] );
+            $this->matrice[0][$j] = $g->antecedentsDe( $etiquettes[$j] );
         }
 
         //! Remplissage du reste de la matrice
@@ -77,17 +77,17 @@ class MatriceDeCoke
     public function __toString()
     {
         $s = "";
-        for( $i = ( count( $this->matrice ) - 1); $i >= 0; $i-- )
+        for( $i = ( count( $this->matrice ) -1 ); $i >= 0; $i-- )
         {
             $s.= "\n";
             $s.= $i;
-            $s.= "\t";
+            $s.= " ";
 
             for ( $j = 0; $j < count( $this->matrice[$i] ); $j++)
             {
                 $b = $this->matrice[$i][$j];
 
-                $s.= implode(",",$b)."\t";
+                $s.= "[".implode("|",$b)."]";
             }
         }
 

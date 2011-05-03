@@ -1,6 +1,6 @@
 <?php
 
-require_once 'src/Regle.php';
+require_once('src/Regle.php');
 
 /**
  * Test class for Regle.
