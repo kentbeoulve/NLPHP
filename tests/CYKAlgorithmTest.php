@@ -8,6 +8,16 @@ class CYKAlgorithmTest extends PHPUnit_Framework_TestCase
 
     protected function setUp()
     {
+        $gram = new ChomskyNormalForm();
+
+        $gram->addRule( new RewriteRule( "DET", "le" ) );
+        $gram->addRule( new RewriteRule( "DET", "la" ) );
+        $gram->addRule( new RewriteRule( "SN", "chat" ) );
+        $gram->addRule( new RewriteRule( "SN", "souris" ) );
+        $gram->addRule( new RewriteRule( "V", "mange" ) );
+        $gram->addRule( new RewriteRule( "GN", "DET", "SN" ) );
+        $gram->addRule( new RewriteRule( "PH", "GN", "GV" ) );
+
         $this->object = new CYKAlgorithm( $gram );
     }
 
@@ -17,9 +27,9 @@ class CYKAlgorithmTest extends PHPUnit_Framework_TestCase
 
     public function testIsValid()
     {
-        $test = array('le','chat','mange','la','souris','dans','le','jardin');
+        $test = array( 'le', 'chat', 'mange', 'la', 'souris' );
         $this->object->load( $test );
-        $this->assertTrue( $this->object->validate('P') );
+        $this->assertTrue( $this->object->validate( 'PH' ) );
     }
 }
 ?>

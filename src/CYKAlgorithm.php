@@ -17,18 +17,6 @@ class CYKAlgorithm
         }
     }
 
-    public function __toString()
-    {
-        foreach( $this->matrix as $line )
-        {
-            foreach( $line as $col )
-            {
-                echo "[".implode('|',$col)."]";
-            }
-            echo "\n";
-        }
-    }
-
     public function load( $sentence )
     {
         $length          = count( $sentence );
@@ -59,21 +47,22 @@ class CYKAlgorithm
                 for( $k = 0; $k < ( $num_row - 1 ); $k++ )
                 {
 
-                    $candidate_left  = $this->matrix[$num_row - $k - 1][$num_col];
-                    $candidate_right = $this->matrix[$k + 1][$num_col + $num_row - 1 - $k];
-
-//                    echo "compare ".implode('|',$candidate_left)." et ".implode('|',$candidate_right)."\n";
-
-/*
-
-                    if( !empty( $candidate_left ) && !empty( $candidate_right ) )
+                    $candidates_col  = $this->matrix[$num_row - $k - 1][$num_col];
+                    $candidates_diag = $this->matrix[$k + 1][$num_col + $num_row - 1 - $k];
+                    if( !empty( $candidates_col ) && !empty( $candidates_diag ) )
                     {
-//                        $this->matrix[$i][$j] = array_merge( $this->matrix[$i][$j], $this->grammar->leftOf( array( $candidate_left, $candidate_right) )  );
-                        $this->matrix[$i][$j] = array_merge( $this->matrix[$i][$j], array("A") );
+                        $productions = array();
+
+                        foreach( $candidates_col as $candidate_col )
+                            foreach( $candidates_diag as $candidate_diag )
+                                $productions = array_merge( $this->grammar->leftOf( array( $candidate_col, $candidate_diag ) ), $productions );
+
+                        foreach( $productions as $production )
+                        {
+                            if( !in_array( $production, $this->matrix[$num_row][$num_col] ) )
+                                $this->matrix[$num_row][$num_col][] = $production;
+                        }
                     }
-  //                  $this->matrix[$i][$j] = array("A");
-                      if( !in_array( "A",$this->matrix[$i][$j]) )
-                          $this->matrix[$i][$j][] = "A";*/
                 }
             }
         }
