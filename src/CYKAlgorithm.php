@@ -17,6 +17,11 @@ class CYKAlgorithm
         }
     }
 
+    public function validate( $symbol )
+    {
+        return in_array($symbol,$this->matrix[count($this->matrix)-1][0]);
+    }
+
     public function load( $sentence )
     {
         $length          = count( $sentence );

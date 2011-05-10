@@ -15,6 +15,7 @@ class CYKAlgorithmTest extends PHPUnit_Framework_TestCase
         $gram->addRule( new RewriteRule( "SN", "chat" ) );
         $gram->addRule( new RewriteRule( "SN", "souris" ) );
         $gram->addRule( new RewriteRule( "V", "mange" ) );
+        $gram->addRule( new RewriteRule( "GV", "V", "GN" ) );
         $gram->addRule( new RewriteRule( "GN", "DET", "SN" ) );
         $gram->addRule( new RewriteRule( "PH", "GN", "GV" ) );
 
@@ -27,8 +28,7 @@ class CYKAlgorithmTest extends PHPUnit_Framework_TestCase
 
     public function testIsValid()
     {
-        $test = array( 'le', 'chat', 'mange', 'la', 'souris' );
-        $this->object->load( $test );
+        $this->object->load( array( 'le', 'chat', 'mange', 'la', 'souris' ) );
         $this->assertTrue( $this->object->validate( 'PH' ) );
     }
 }
