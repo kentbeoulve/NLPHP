@@ -11,9 +11,9 @@ Dépendances
  - PHP 5
  - eZ Components
 
-Tests unitaires
-===============
+Unit tests
+==========
 
-Pour lancer un test unitaire, installer PHPUnit (http://www.phpunit.de/manual/current/en/installation.html)
+To test libraries, install PHPUnit (http://www.phpunit.de/manual/current/en/installation.html)
 
-Puis dans le répertoire racine du projet, taper "phpunit test" (test correspond au nom du dossier de test)
+Then from project root, type "phpunit --bootstrap autoload.php tests"
