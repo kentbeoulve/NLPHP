@@ -1,4 +1,4 @@
-Description
+Description [![Build Status](https://secure.travis-ci.org/charlycoste/NLPHP.png)](http://travis-ci.org/charlycoste/NLPHP)
 ===========
 
 Quelques classes PHP permettant des traitements très basiques du langage naturel
