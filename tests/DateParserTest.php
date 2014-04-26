@@ -35,4 +35,11 @@ class DateParserTest extends PHPUnit_Framework_TestCase
     {
         $this->assertTrue($this->cyk->validate('DATE'));
     }
+
+
+    public function provider()
+    {
+        //Samedi 26 avril 2014 à 10h30
+        //du vendredi 24 janvier au dimanche 27 avril 2014
+    }
 }

@@ -8,7 +8,7 @@ class CYKAlgorithmTest extends PHPUnit_Framework_TestCase
     /**
      * @var CYKAlgorithm
      */
-    protected $object;
+    protected $algorithm;
 
     protected function setUp()
     {
@@ -23,16 +23,32 @@ class CYKAlgorithmTest extends PHPUnit_Framework_TestCase
         $gram->addRule(new RewriteRule("GN", "DET", "SN"));
         $gram->addRule(new RewriteRule("PH", "GN", "GV"));
 
-        $this->object = new CYKAlgorithm($gram);
+        $this->algorithm = new CYKAlgorithm($gram);
     }
 
     protected function tearDown()
     {
     }
 
-    public function testIsValid()
+    public function testValidate()
     {
-        $this->object->load(array('le', 'chat', 'mange', 'la', 'souris'));
-        $this->assertTrue($this->object->validate('PH'));
+        $phrase = array('le', 'chat', 'mange', 'la', 'souris');
+
+        $this->algorithm->load($phrase);
+
+        $ok = $this->algorithm->validate('PH');
+
+        $this->assertTrue($ok);
+    }
+
+    public function testUnvalidate()
+    {
+        $phrase = array('le', 'chat', 'mange', 'souris');
+
+        $this->algorithm->load($phrase);
+
+        $ok = $this->algorithm->validate('PH');
+
+        $this->assertFalse($ok);
     }
 }
