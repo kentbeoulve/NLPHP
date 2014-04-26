@@ -30,23 +30,25 @@ class CYKAlgorithm
         $length = count($sentence);
 
         // First line init (words)
-        for ($i = 0; $i < $length; $i++) {
-
-            $this->matrix[0][$i] = array($sentence[$i]);
-        }
+        $this->matrix[0] = array_map(
+            function($word){
+                return array($word);
+            },
+            $sentence
+        );
 
         // Second line init (candidates tags)
-        for ($i = 0; $i < $length; $i++) {
-
-            $this->matrix[1][$i] = $this->grammar->leftOf($this->matrix[0][$i]);
-        }
+        $this->matrix[1] = array_map(
+            function($word) {
+                return $this->grammar->leftOf($word);
+            },
+            $this->matrix[0]
+        );
 
         // Rest of matrix init (with empty arrays)
         for ($i = 2; $i <= $length; $i++) {
 
-            for ($j = 0; $j <= ($length - $i); $j++) {
-                $this->matrix[$i][$j] = array();
-            }
+            $this->matrix[$i] = array_fill(0, $length - $i + 1, array());
         }
 
         //! Applying CYK algorithm
