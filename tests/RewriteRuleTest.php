@@ -1,5 +1,7 @@
 <?php
-namespace charlycoste/NLPHP;
+namespace charlycoste\NLPHP;
+
+use PHPUnit_Framework_TestCase;
 
 class RewriteRuleTest extends PHPUnit_Framework_TestCase
 {

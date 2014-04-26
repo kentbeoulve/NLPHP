@@ -1,6 +1,8 @@
 <?php
 namespace charlycoste\NLPHP;
 
+use PHPUnit_Framework_TestCase;
+
 class CYKAlgorithmTest extends PHPUnit_Framework_TestCase
 {
     /**
