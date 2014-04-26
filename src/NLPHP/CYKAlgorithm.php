@@ -31,7 +31,7 @@ class CYKAlgorithm
 
         // First line init (words)
         $this->matrix[0] = array_map(
-            function($word){
+            function ($word) {
                 return array($word);
             },
             $sentence
@@ -39,7 +39,7 @@ class CYKAlgorithm
 
         // Second line init (candidates tags)
         $this->matrix[1] = array_map(
-            function($word) {
+            function ($word) {
                 return $this->grammar->leftOf($word);
             },
             $this->matrix[0]
@@ -52,9 +52,9 @@ class CYKAlgorithm
         }
 
         //! Applying CYK algorithm
-        for ($num_row = 2; $num_row < $length + 1; $num_row++) {
+        for ($num_row = 2; $num_row < $length + 1; $num_row++) { // rows
 
-            for ($num_col = 0; $num_col < ($length - $num_row + 1); $num_col++) {
+            for ($num_col = 0; $num_col < ($length - $num_row + 1); $num_col++) { // columns
 
                 // Looking for rules productions
                 for ($k = 0; $k < ($num_row - 1); $k++) {
