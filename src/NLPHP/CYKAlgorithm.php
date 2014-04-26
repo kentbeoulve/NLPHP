@@ -27,7 +27,7 @@ class CYKAlgorithm
 
     public function load($sentence)
     {
-        $length = count($sentence);
+        $length  = count($sentence);
 
         // First line init (words)
         $this->matrix[0] = array_map(
@@ -38,12 +38,16 @@ class CYKAlgorithm
         );
 
         // Second line init (candidates tags)
+        $gram = $this->grammar;
+
         $this->matrix[1] = array_map(
-            function ($word) {
-                return $this->grammar->leftOf($word);
+            function ($word) use($gram) {    // PHP 5.3 can't access $this in closures
+                return $gram->leftOf($word);
             },
             $this->matrix[0]
         );
+
+        unset($gram);
 
         // Rest of matrix init (with empty arrays)
         for ($i = 2; $i <= $length; $i++) {
