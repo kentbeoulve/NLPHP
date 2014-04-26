@@ -15,5 +15,10 @@
             "email": "contact@ccoste.fr"
         }
     ],
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-0": {
+            "NLPHP": "src/"
+        }
+    }
 }
