@@ -1,5 +1,5 @@
 <?php
-namespace charlycoste/NLPHP;
+namespace charlycoste\NLPHP;
 
 class CYKAlgorithmTest extends PHPUnit_Framework_TestCase
 {
