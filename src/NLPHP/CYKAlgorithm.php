@@ -41,7 +41,7 @@ class CYKAlgorithm
         $gram = $this->grammar;
 
         $this->matrix[1] = array_map(
-            function ($word) use($gram) {    // PHP 5.3 can't access $this in closures
+            function ($word) use ($gram) {    // PHP 5.3 can't access $this in closures
                 return $gram->leftOf($word);
             },
             $this->matrix[0]
