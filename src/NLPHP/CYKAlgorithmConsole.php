@@ -1,5 +1,5 @@
 <?php
-namespace charlycoste\NLPHP;
+namespace NLPHP;
 
 class Console
 {
