@@ -1,6 +1,9 @@
 <?php
 namespace NLPHP;
 
+/**
+ * @todo documentation
+ */
 class ChomskyNormalForm
 {
     private $rules;

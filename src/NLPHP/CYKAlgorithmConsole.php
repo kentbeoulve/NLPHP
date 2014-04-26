@@ -1,6 +1,9 @@
 <?php
 namespace NLPHP;
 
+/**
+ * @todo documentation
+ */
 class Console
 {
     public static function main()

@@ -3,6 +3,7 @@ namespace NLPHP;
 
 /**
  * Cocke–Younger–Kasami Algorithm
+ * @todo documentation
  */
 class CYKAlgorithm
 {

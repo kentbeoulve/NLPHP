@@ -1,6 +1,9 @@
 <?php
 namespace NLPHP;
 
+/**
+ * @todo documentation
+ */
 class RewriteRule
 {
     public $left;
