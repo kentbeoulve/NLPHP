@@ -1,0 +1,17 @@
+{
+    "name": "charlycoste/nlphp",
+    "description": "\"Natural Language Processing for PHP\" code snippets",
+    "require-dev": {
+        "phpunit/phpunit": "4.0.*",
+        "squizlabs/php_codesniffer": "1.*",
+        "zetacomponents/console-tools": "1.6"
+    },
+    "license": "GNU Affero General Public License",
+    "authors": [
+        {
+            "name": "Charles-Edouard Coste",
+            "email": "contact@ccoste.fr"
+        }
+    ],
+    "minimum-stability": "dev",
+}
