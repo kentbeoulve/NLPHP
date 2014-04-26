@@ -1,4 +1,6 @@
 <?php
+namespace charlycoste/NLPHP;
+
 class CYKAlgorithmTest extends PHPUnit_Framework_TestCase
 {
     /**
@@ -10,16 +12,16 @@ class CYKAlgorithmTest extends PHPUnit_Framework_TestCase
     {
         $gram = new ChomskyNormalForm();
 
-        $gram->addRule( new RewriteRule( "DET", "le" ) );
-        $gram->addRule( new RewriteRule( "DET", "la" ) );
-        $gram->addRule( new RewriteRule( "SN", "chat" ) );
-        $gram->addRule( new RewriteRule( "SN", "souris" ) );
-        $gram->addRule( new RewriteRule( "V", "mange" ) );
-        $gram->addRule( new RewriteRule( "GV", "V", "GN" ) );
-        $gram->addRule( new RewriteRule( "GN", "DET", "SN" ) );
-        $gram->addRule( new RewriteRule( "PH", "GN", "GV" ) );
+        $gram->addRule(new RewriteRule("DET", "le"));
+        $gram->addRule(new RewriteRule("DET", "la"));
+        $gram->addRule(new RewriteRule("SN", "chat"));
+        $gram->addRule(new RewriteRule("SN", "souris"));
+        $gram->addRule(new RewriteRule("V", "mange"));
+        $gram->addRule(new RewriteRule("GV", "V", "GN"));
+        $gram->addRule(new RewriteRule("GN", "DET", "SN"));
+        $gram->addRule(new RewriteRule("PH", "GN", "GV"));
 
-        $this->object = new CYKAlgorithm( $gram );
+        $this->object = new CYKAlgorithm($gram);
     }
 
     protected function tearDown()
@@ -28,8 +30,7 @@ class CYKAlgorithmTest extends PHPUnit_Framework_TestCase
 
     public function testIsValid()
     {
-        $this->object->load( array( 'le', 'chat', 'mange', 'la', 'souris' ) );
-        $this->assertTrue( $this->object->validate( 'PH' ) );
+        $this->object->load(array('le', 'chat', 'mange', 'la', 'souris'));
+        $this->assertTrue($this->object->validate('PH'));
     }
 }
-?>

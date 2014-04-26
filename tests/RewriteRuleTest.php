@@ -1,4 +1,6 @@
 <?php
+namespace charlycoste/NLPHP;
+
 class RewriteRuleTest extends PHPUnit_Framework_TestCase
 {
     /**
@@ -8,7 +10,7 @@ class RewriteRuleTest extends PHPUnit_Framework_TestCase
 
     protected function setUp()
     {
-        $this->object = new RewriteRule("A","B","C");
+        $this->object = new RewriteRule("A", "B", "C");
     }
 
     protected function tearDown()
@@ -18,9 +20,8 @@ class RewriteRuleTest extends PHPUnit_Framework_TestCase
     /**
      * @todo Implement test__toString().
      */
-    public function test__toString()
+    public function testToString()
     {
         $this->assertEquals("{$this->object}", "A -> B C");
     }
 }
-?>
