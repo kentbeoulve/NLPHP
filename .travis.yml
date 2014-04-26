@@ -8,3 +8,4 @@ before_script:
 script:
   - ./vendor/bin/phpcs --warning-severity=0 --standard=PSR2 src tests
   - ./vendor/bin/phpunit --coverage-text
+  - ./vendor/bin/phpmd src text codesize,unusedcode,naming,design
