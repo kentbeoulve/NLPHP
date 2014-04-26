@@ -3,7 +3,7 @@ php:
   - 5.3
 
 before_script:
-  - composer install --dev
+  - composer install --dev --prefer-dist
 
 script:
   - ./vendor/bin/phpcs --warning-severity=0 --standard=PSR2 src test
