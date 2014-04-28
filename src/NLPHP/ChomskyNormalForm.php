@@ -20,16 +20,18 @@ class ChomskyNormalForm
 
     public function leftOf($right)
     {
-        $result = array();
-
-        foreach ($this->rules as $rule) {
-
-            if ($rule->right == $right) {
-
-                $result[] = $rule->left;
+        $matchingRules = array_filter(
+            $this->rules,
+            function ($rule) use ($right) {
+                return $rule->right == $right;
             }
-        }
+        );
 
-        return $result;
+        return array_map(
+            function ($rule) {
+                return $rule->left;
+            },
+            $matchingRules
+        );
     }
 }
