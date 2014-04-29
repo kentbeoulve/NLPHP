@@ -23,6 +23,9 @@
         }
     },
     "bin": [
-        "src/bin/cyk"
-    ]
+        "cyk"
+    ],
+    "config": {
+        "bin-dir": "src/bin"
+    }
 }
