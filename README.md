@@ -1,5 +1,8 @@
-Description [![Build Status](https://secure.travis-ci.org/charlycoste/NLPHP.png)](http://travis-ci.org/charlycoste/NLPHP)
+Description 
 ===========
+[![Build Status](https://secure.travis-ci.org/charlycoste/NLPHP.png)](http://travis-ci.org/charlycoste/NLPHP)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/charlycoste/NLPHP/badges/quality-score.png?s=ab9b1902eac275ee8b15b05f84f6aec99ba0eea7)](https://scrutinizer-ci.com/g/charlycoste/NLPHP/)
+[![Code Coverage](https://scrutinizer-ci.com/g/charlycoste/NLPHP/badges/coverage.png?s=cca6ea966108ee1a7b146c28afefa1b547d469eb)](https://scrutinizer-ci.com/g/charlycoste/NLPHP/)
 
 Quelques classes PHP permettant des traitements très basiques du langage naturel
 à l'aide de grammaires de Chomsky et de la matrice de Coke
@@ -38,9 +41,9 @@ Unit tests are using PHPUnit. Too launch it, from the project folder type:
 License
 =======
 
-[[AGPL](http://www.gnu.org/graphics/agplv3-155x51.png)](http://www.gnu.org/licenses/agpl-3.0.html)
+[![AGPL](http://www.gnu.org/graphics/agplv3-155x51.png)](http://www.gnu.org/licenses/agpl-3.0.html)
 
-Copyright (C) 2012 Synap System SARL
+Copyright (C) 2011-2014 Charles-Edouard Coste
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
