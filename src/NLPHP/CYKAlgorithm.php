@@ -10,14 +10,9 @@ class CYKAlgorithm
     private $grammar;
     public $matrix;
 
-    public function __construct(ChomskyNormalForm $grammar, $sentence = array())
+    public function __construct(ChomskyNormalForm $grammar)
     {
         $this->grammar = $grammar;
-
-        if (!empty($sentence)) {
-
-            $this->load($sentence);
-        }
     }
 
     public function validate($symbol)
