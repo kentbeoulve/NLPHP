@@ -3,6 +3,9 @@ Description
 [![Build Status](https://secure.travis-ci.org/charlycoste/NLPHP.png)](http://travis-ci.org/charlycoste/NLPHP)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/charlycoste/NLPHP/badges/quality-score.png?s=ab9b1902eac275ee8b15b05f84f6aec99ba0eea7)](https://scrutinizer-ci.com/g/charlycoste/NLPHP/)
 [![Code Coverage](https://scrutinizer-ci.com/g/charlycoste/NLPHP/badges/coverage.png?s=cca6ea966108ee1a7b146c28afefa1b547d469eb)](https://scrutinizer-ci.com/g/charlycoste/NLPHP/)
+[![Latest Stable Version](https://poser.pugx.org/charlycoste/nlphp/v/stable.png)](https://packagist.org/packages/charlycoste/nlphp)
+[![License](https://poser.pugx.org/charlycoste/nlphp/license.png)](https://packagist.org/packages/charlycoste/nlphp)
+[![Total Downloads](https://poser.pugx.org/charlycoste/nlphp/downloads.png)](https://packagist.org/packages/charlycoste/nlphp)
 
 Quelques classes PHP permettant des traitements très basiques du langage naturel
 à l'aide de grammaires de Chomsky et de la matrice de Coke
