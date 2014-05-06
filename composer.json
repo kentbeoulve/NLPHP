@@ -23,6 +23,6 @@
         }
     },
     "bin": [
-        "bin/cyk"
+        "src/bin/cyk"
     ]
 }
