@@ -34,7 +34,9 @@ class Console
 
         $test = array('le', 'chat', 'mange', 'la', 'souris');
 
-        $cyk = new CYKAlgorithm($gram, $test);
+        $cyk = new CYKAlgorithm($gram);
+
+        $cyk->load($test);
 
         $output = new ezcConsoleOutput();
 
