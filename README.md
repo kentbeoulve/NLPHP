@@ -36,7 +36,7 @@ the dependencies specified in the `composer.json`.
 Unit tests
 ==========
 
-Unit tests are using PHPUnit. Too launch it, from the project folder type:
+Unit tests are using PHPUnit. To launch it, from the project folder type:
 
     ./vendor/bin/phpunit
 
