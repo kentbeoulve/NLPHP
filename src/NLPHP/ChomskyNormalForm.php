@@ -34,13 +34,13 @@ class ChomskyNormalForm
     {
         $matchingRules = array_filter(
             $this->rules,
-            function ($rule) use ($right) {
+            function (RewriteRule $rule) use ($right) {
                 return $rule->right == $right;
             }
         );
 
         return array_map(
-            function ($rule) {
+            function (RewriteRule $rule) {
                 return $rule->left;
             },
             $matchingRules
