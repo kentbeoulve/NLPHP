@@ -15,7 +15,7 @@ if (file_exists(__DIR__ . '/../../../../autoload.php')) {
 use ezcConsoleOutput, ezcConsoleTable;
 
 /**
- * @todo documentation
+ * This class purpose is to handle console inputs and outputs.
  */
 class Console
 {

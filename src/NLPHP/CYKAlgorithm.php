@@ -3,7 +3,10 @@ namespace NLPHP;
 
 /**
  * Cocke–Younger–Kasami Algorithm
- * @todo documentation
+ *
+ * This class implements the CYK Algorithm.
+ * You must instanciate it with a ChomskyNormalForm grammar as parameter
+ * then you can load a sentence which must be an array.
  */
 class CYKAlgorithm
 {

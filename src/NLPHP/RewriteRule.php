@@ -2,7 +2,8 @@
 namespace NLPHP;
 
 /**
- * @todo documentation
+ * A rewrite rule here is a transformation rule which can
+ * be expressed as A->B or A->(B,C)
  */
 class RewriteRule
 {
