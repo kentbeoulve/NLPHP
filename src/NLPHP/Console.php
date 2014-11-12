@@ -58,7 +58,7 @@ class Console
         $this->outputTable($table);
     }
 
-    public static function main()
+    public function main()
     {
         // 1. Instanciate a generic ChomskyNormalForm
         $grammar = new ChomskyNormalForm();
@@ -77,9 +77,9 @@ class Console
 
         foreach ($rules as $rule) {
 
-            $gram->addRule($rule);
+            $grammar->addRule($rule);
         }
- 
+
         // 3. Instanciate a CYK algorithm matrix
         $cyk = new CYKAlgorithm($grammar);
 
