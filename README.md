@@ -10,6 +10,7 @@ Description
 Quelques classes PHP permettant des traitements très basiques du langage naturel
 à l'aide de grammaires de Chomsky et de la matrice de Coke
 
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/67b9e8d4-da80-4b51-a7aa-07cc6dcfc080/big.png)](https://insight.sensiolabs.com/projects/67b9e8d4-da80-4b51-a7aa-07cc6dcfc080)
 
 Dépendances
 ===========
