@@ -29,12 +29,10 @@ class CYKAlgorithm
     private function firstLineInit(array $sentence)
     {
         $this->matrix[0] = array_map(
-
-            function($word){
+            function ($word) {
 
                 return array($word);
             },
-
             $sentence
         );
     }
@@ -47,12 +45,10 @@ class CYKAlgorithm
         $gram = $this->grammar; // PHP 5.3 can't access $this in closures
 
         $this->matrix[1] = array_map(
-
             function ($word) use ($gram) {
 
                 return $gram->leftOf($word);
             },
-
             $this->matrix[0]
         );
     }
