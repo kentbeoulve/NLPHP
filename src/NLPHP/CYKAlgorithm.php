@@ -23,35 +23,64 @@ class CYKAlgorithm
         return in_array($symbol, $this->matrix[count($this->matrix)-1][0]);
     }
 
-    public function load($sentence)
+    /**
+     * Initialize the first line of the matrix
+     */
+    private function firstLineInit(array $sentence)
     {
-        $length  = count($sentence);
-
-        // First line init (words)
         $this->matrix[0] = array_map(
-            function ($word) {
+
+            function($word){
+
                 return array($word);
             },
+
             $sentence
         );
+    }
 
-        // Second line init (candidates tags)
-        $gram = $this->grammar;
+    /**
+     * Initialize the second line of the matrix
+     */
+    private function secondLineInit()
+    {
+        $gram = $this->grammar; // PHP 5.3 can't access $this in closures
 
         $this->matrix[1] = array_map(
-            function ($word) use ($gram) {    // PHP 5.3 can't access $this in closures
+
+            function ($word) use ($gram) {
+
                 return $gram->leftOf($word);
             },
+
             $this->matrix[0]
         );
+    }
 
-        unset($gram);
-
-        // Rest of matrix init (with empty arrays)
+    /**
+     * Initialization of empty cells with empty arrays
+     */
+    private function emptyCellsInit($length)
+    {
         for ($i = 2; $i <= $length; $i++) {
 
             $this->matrix[$i] = array_fill(0, $length - $i + 1, array());
         }
+
+    }
+
+    public function load($sentence)
+    {
+        $length  = count($sentence);
+
+        // 1. Init first line
+        $this->firstLineInit($sentence);
+
+        // 2. Init first line
+        $this->secondLineInit();
+
+        // 3. Init the rest of matrix
+        $this->emptyCellsInit($length);
 
         //! Applying CYK algorithm
         for ($num_row = 2; $num_row < $length + 1; $num_row++) { // rows
